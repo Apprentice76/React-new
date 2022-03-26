@@ -1,6 +1,16 @@
 import { Link } from 'react-router-dom'
 
-const Nav = () => {
+const Nav = (props) => {
+
+    const { setToken, valid, setValid, routeHistory } = props    
+
+	const logoutHandler = () => {
+		localStorage.removeItem('token')
+		setValid(false)
+		setToken(null)
+		routeHistory('/login')
+	}
+
 	return (
 		<nav className='navbar navbar-expand navbar-light fixed-top'>
 			<div className='container'>
@@ -21,6 +31,12 @@ const Nav = () => {
 						</li> */}
 					</ul>
 				</div>
+
+				<button
+					className='btn btn-primary btn-block'
+					onClick={logoutHandler}>
+					Log out
+				</button>
 			</div>
 		</nav>
 	)

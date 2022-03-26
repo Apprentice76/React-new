@@ -40,31 +40,33 @@ const Login = (props) => {
 			}}
 		/>
 	) : (
-		<form onSubmit={(event) => handleSubmit(event)}>
-			<h3>Login</h3>
+		<div className='auth-inner'>
+			<form onSubmit={(event) => handleSubmit(event)}>
+				<h3>Login</h3>
 
-			<div className='form-group'>
-				<label>Email</label>
-				<input
-					type='email'
-					className='form-control'
-					placeholder='Email'
-					onChange={(e) => setEmail(e.target.value)}
-				/>
-			</div>
+				<div className='form-group'>
+					<label>Email</label>
+					<input
+						type='email'
+						className='form-control'
+						placeholder='Email'
+						onChange={(e) => setEmail(e.target.value)}
+					/>
+				</div>
 
-			<div className='form-group'>
-				<label>Password</label>
-				<input
-					type='password'
-					className='form-control'
-					placeholder='Password'
-					onChange={(e) => setPassword(e.target.value)}
-				/>
-			</div>
+				<div className='form-group'>
+					<label>Password</label>
+					<input
+						type='password'
+						className='form-control'
+						placeholder='Password'
+						onChange={(e) => setPassword(e.target.value)}
+					/>
+				</div>
 
-			<button className='btn btn-primary btn-block'>Login</button>
-		</form>
+				<button className='btn btn-primary btn-block'>Login</button>
+			</form>
+		</div>
 	)
 }
 

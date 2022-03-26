@@ -47,19 +47,17 @@ const App = () => {
 
 	return (
 		<div className='App'>
-			<Nav />
+			<Nav {...globals} />
 			<div className='auth-wrapper'>
-				<div className='auth-inner'>
-					<Routes>
-						<Route exact path='/' element={<Home {...globals} />} />
-						<Route
-							exact
-							path='/login'
-							element={<Login {...globals} />}
-						/>
-						{/* <Route exact path="/register" component={Register} /> */}
-					</Routes>
-				</div>
+				<Routes>
+					<Route exact path='/' element={<Home {...globals} />} />
+					<Route
+						exact
+						path='/login'
+						element={<Login {...globals} />}
+					/>
+					{/* <Route exact path="/register" component={Register} /> */}
+				</Routes>
 			</div>
 		</div>
 	)
