@@ -63,6 +63,7 @@ const ModalComponent = ({
                     type: type,
                     data: res.data.raw.data
                 })
+                localStorage.setItem('raw', res.data.raw.data)
 				setRawDocs((prev) => ({
 					...prev,
 					identity: res.data.raw.data,

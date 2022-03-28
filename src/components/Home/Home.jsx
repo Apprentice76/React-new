@@ -52,7 +52,8 @@ const Home = (props) => {
 
 	const handleEditClose = (type) => {
 		setShowEditModal(false)
-		setRaw(null)
+        setRaw(null)
+        setFieldDisabled(true)
         setShow(true)
         switch (type) {
 			case 'identity':
@@ -110,7 +111,7 @@ const Home = (props) => {
 					raw,
 					showEditModal,
 					handleEditClose,
-                    setShow,
+                    currentId
 				}}
 			/>
 			{/* User card stack */}
