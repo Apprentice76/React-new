@@ -17,7 +17,9 @@ const ModalComponent = ({
 	setAge,
 	setRaw,
 	currentStage,
-	setCurrentStage,
+    setCurrentStage,
+    setPersons,
+    exists
 }) => {
 	const [rawDocs, setRawDocs] = useState({})
 
@@ -41,7 +43,9 @@ const ModalComponent = ({
 					address: 2,
 					relationship: 2,
 					dob: 2,
-				})
+                })
+                person['id'] = res.data.id
+                setPersons(prev => [...prev, person])
 				console.log(res)
 			})
 			.catch((err) => console.log(err.message))
@@ -112,7 +116,7 @@ const ModalComponent = ({
 			centered>
 			<Modal.Header closeButton>
 				<Modal.Title className='w-100 text-center ps-3'>
-					Enter Person Data
+					{ exists ? '' : 'Enter' } Person Data
 				</Modal.Title>
 			</Modal.Header>
 			<Modal.Body>

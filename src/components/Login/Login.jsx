@@ -29,7 +29,7 @@ const Login = (props) => {
 				routeHistory('/')
 			})
 			.catch((err) => {
-				console.log(err)
+				console.log(err.message)
 			})
 	}
 

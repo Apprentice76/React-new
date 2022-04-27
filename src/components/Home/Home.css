@@ -1,0 +1,15 @@
+.custom-card {
+    position: relative;
+}
+
+.custom-card-title {
+    flex: 1;
+    cursor: pointer;
+}
+
+.custom-close {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}

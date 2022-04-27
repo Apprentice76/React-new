@@ -1,9 +1,7 @@
 [[redirects]]
-  from = "/login"
+  from = "/*"
   to = "/"
-  status = 301
-  force = false
-  query = {path = ":path"}
+  status = 200
 
 [context.production]
   CI = false
