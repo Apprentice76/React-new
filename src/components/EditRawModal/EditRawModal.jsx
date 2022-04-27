@@ -33,7 +33,7 @@ const EditRawModal = ({ raw, showEditModal, handleEditClose, currentId }) => {
 	// 	// }
 	// 	// return window.btoa(binary)
 	// })(raw?.data)
-	const [cropState, setCropState] = useState()
+	// const [cropState, setCropState] = useState()
 	const [editDone, setEditDone] = useState(false)
 	const [uploaded, setUploaded] = useState(false)
 	const [blob, setBlob] = useState(null)
@@ -48,8 +48,8 @@ const EditRawModal = ({ raw, showEditModal, handleEditClose, currentId }) => {
         handleEditClose(raw?.type)
     }
 
-	const onDragStop = useCallback((s) => setCropState(s), [])
-	const onChange = useCallback((s) => setCropState(s), [])
+	// const onDragStop = useCallback((s) => setCropState(s), [])
+	// const onChange = useCallback((s) => setCropState(s), [])
 
 	const doSomething = async () => {
 		// console.log(cropState)
@@ -121,8 +121,8 @@ const EditRawModal = ({ raw, showEditModal, handleEditClose, currentId }) => {
                             maxWidth={300}
 							ref={cropperRef}
 							image={img}
-							onChange={onChange}
-							onDragStop={onDragStop}
+							// onChange={onChange}
+							// onDragStop={onDragStop}
 						/>}
 						{/* <input
 							type='file'

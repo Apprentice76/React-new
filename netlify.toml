@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/login"
+  to = "/"
+  status = 301
+  force = false
+  query = {path = ":path"}
+
+[context.production]
+  CI = false
