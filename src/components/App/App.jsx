@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import axios from '../../services/axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import Home from '../Home/Home'
@@ -16,10 +16,10 @@ const App = () => {
 	useEffect(() => {
 		const token_val = localStorage.getItem('token')
 		if (token_val) {
-			const url = `${process.env.REACT_APP_BACKEND_URL}/checkValidity`
+			// const url = `${process.env.REACT_APP_BACKEND_URL}/checkValidity`
 
 			axios
-				.get(url, {
+				.get('/checkValidity', {
 					headers: {
 						Authorization: `Basic ${token_val}`,
 					},
