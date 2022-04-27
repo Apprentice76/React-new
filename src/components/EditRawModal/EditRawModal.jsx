@@ -1,7 +1,7 @@
 import Cropper from 'react-perspective-cropper'
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { Modal, Button } from 'react-bootstrap'
-import axios from 'axios'
+import axios from '../../services/axios'
 
 const EditRawModal = ({ raw, showEditModal, handleEditClose, currentId }) => {
 	const [img, setImg] = useState('')
@@ -67,11 +67,11 @@ const EditRawModal = ({ raw, showEditModal, handleEditClose, currentId }) => {
         const file = new File([blob], `${blob.name}`, { type: `${blob.type}` })
         
         const formData = new FormData()
-        formData.append('raw', file)
-
+        formData.append('edited', file)
+        console.log(formData)
 		axios
 			.put(
-				`${process.env.REACT_APP_BACKEND_URL}/uploadEdited/${currentId}/${raw.type}`,
+				`/uploadEdited/${currentId}/${raw.type}`,
 				formData,
 				{
 					// headers: {

@@ -1,7 +1,7 @@
 import { Modal, Button } from 'react-bootstrap'
 import QRCode from 'react-qr-code'
 import { useState } from 'react'
-import axios from 'axios'
+import axios from '../../services/axios'
 import Form from '../Form/Form'
 
 const ModalComponent = ({
@@ -27,7 +27,7 @@ const ModalComponent = ({
 			age: age,
 		}
 		axios
-			.post(`${process.env.REACT_APP_BACKEND_URL}/createPerson`, person, {
+			.post(`/createPerson`, person, {
 				headers: {
 					Authorization: `Basic ${localStorage.getItem('token')}`,
 				},
@@ -50,7 +50,7 @@ const ModalComponent = ({
     const getRaw = (type) => {
 		axios
 			.get(
-				`${process.env.REACT_APP_BACKEND_URL}/getRaw/${currentId}/${type}`,
+				`/getRaw/${currentId}/${type}`,
 				{
 					headers: {
 						Authorization: `Basic ${localStorage.getItem('token')}`,

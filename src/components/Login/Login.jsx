@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../../services/axios'
 import { Navigate } from 'react-router-dom'
 import { useState } from 'react'
 
@@ -16,12 +16,12 @@ const Login = (props) => {
 			pwd: password,
 		}
 
-		const url = `${process.env.REACT_APP_BACKEND_URL}/login`
+		// const url = `${process.env.REACT_APP_BACKEND_URL}/login`
 
-		console.log(url)
+		// console.log(url)
 
 		axios
-			.post(url, data)
+			.post('/login', data)
 			.then((res) => {
 				localStorage.setItem('token', res.data.token)
 				setToken(res.data.token)
